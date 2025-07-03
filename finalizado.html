@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Compra Finalizada</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // limpa o carrinho ao entrar na página
+    window.onload = () => {
+      localStorage.removeItem('carrinho');
+    };
+  </script>
+</head>
+<body>
+  <main class="container" style="text-align: center; padding: 50px;">
+    <h2>Compra Finalizada com Sucesso!</h2>
+    <p>Obrigado por comprar na Celulares Tech.</p>
+    <a href="index.html" class="btn-finalizar">Voltar para a loja</a>
+  </main>
+</body>
+</html>
