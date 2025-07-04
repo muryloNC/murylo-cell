@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Metadados da página -->
   <meta charset="UTF-8">
   <title>Carrinho - Murylo Cell</title>
+
+  <!-- Link para o CSS externo -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Script específico do carrinho de compras (defer = carrega após o HTML) -->
   <script defer src="js/carrinho.js"></script>
 </head>
 <body>
+  <!-- Cabeçalho do site com título e menu de navegação -->
   <header>
     <h1>Murylo Cell</h1>
     <nav>
@@ -20,18 +26,27 @@
     </nav>
   </header>
 
-  <main>
-    <main class="container">
-  <h2>Seu Carrinho</h2>
-  <div id="lista-carrinho"></div>
-  <p id="total"></p>
-  <button onclick="limparCarrinho()">Esvaziar Carrinho</button>
-  <a href="finalizado.html" id="finalizar-compra" class="btn-finalizar" style="display: none;">Finalizar Compra</a>
+  <!-- Conteúdo principal da página -->
+  <main class="container">
+    <!-- Título da seção -->
+    <h2>Seu Carrinho</h2>
 
-</main>
+    <!-- Lista de produtos do carrinho (será preenchida via JavaScript) -->
+    <div id="lista-carrinho"></div>
 
+    <!-- Total da compra -->
+    <p id="total"></p>
+
+    <!-- Botão para esvaziar o carrinho -->
+    <button onclick="limparCarrinho()">Esvaziar Carrinho</button>
+
+    <!-- Botão para finalizar compra (escondido até ter itens no carrinho) -->
+    <a href="finalizado.html" id="finalizar-compra" class="btn-finalizar" style="display: none;">
+      Finalizar Compra
+    </a>
   </main>
 
+  <!-- Rodapé do site -->
   <footer>
     <p>&copy; 2025 Murylo Cell</p>
   </footer>

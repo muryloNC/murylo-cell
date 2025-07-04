@@ -1,61 +1,77 @@
+/* ========================== */
+/* CONFIGURAÇÕES GLOBAIS     */
+/* ========================== */
+
 html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+  margin: 0; /* Remove margens padrão do navegador */
+  padding: 0; /* Remove preenchimento padrão */
+  min-height: 100vh; /* Garante altura mínima da tela inteira */
   display: flex;
-  flex-direction: column;
-  background-image: url('../img/fundo.jpg'); /* ajuste o caminho */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: 'Poppins', sans-serif;
-  color: white;
+  flex-direction: column; /* Layout em coluna para facilitar rodapé fixo no fim */
+  background-image: url('../img/fundo.jpg'); /* Imagem de fundo (ajustar caminho) */
+  background-size: cover; /* Cobre toda a área disponível */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  font-family: 'Poppins', sans-serif; /* Fonte principal */
+  color: white; /* Cor padrão do texto */
 }
+
+* {
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total dos elementos */
+}
+
+/* ========================== */
+/* LAYOUT PRINCIPAL           */
+/* ========================== */
 
 main {
-  flex: 1; /* Ocupa o espaço disponível */
+  flex: 1; /* Ocupa todo o espaço disponível entre header e footer */
 }
 
-
-
+/* ========================== */
+/* CABEÇALHO                  */
+/* ========================== */
 
 header {
-  position: sticky;
+  position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar */
   top: 0;
-  z-index: 1000;
-  background-color: #444;
+  z-index: 1000; /* Fica acima dos demais elementos */
+  background-color: #7e0200; /* Cor de fundo */
   color: white;
   padding: 1em;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-
-}
-header {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inferior */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
 }
 
-
+/* ========================== */
+/* MENU DE NAVEGAÇÃO          */
+/* ========================== */
 
 .menu {
   display: flex;
   justify-content: center;
-  list-style: none;
+  list-style: none; /* Remove marcadores */
   padding: 0;
 }
 
 .menu li {
-  margin: 0 15px;
+  margin: 0 15px; /* Espaçamento entre os itens */
 }
 
 .menu a {
   color: white;
-  text-decoration: none;
+  text-decoration: none; /* Remove sublinhado */
   font-weight: bold;
 }
 
 .menu a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
 }
+
+/* ========================== */
+/* BANNER PRINCIPAL           */
+/* ========================== */
 
 .banner {
   background-color: #1a1a1a;
@@ -63,11 +79,16 @@ header {
   padding: 2em;
 }
 
+/* ========================== */
+/* SEÇÃO DE PRODUTOS          */
+/* ========================== */
+
 .produtos {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-wrap: wrap; /* Permite quebra de linha */
+  justify-content: space-around; /* Espaço entre produtos */
   padding: 1em;
+  overflow: visible;
 }
 
 .produto {
@@ -77,12 +98,14 @@ header {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
   max-width: 300px;
-  transition: transform 0.3s, background-color 0.3s;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  will-change: transform;
 }
 
 .produto:hover {
   background-color: #2a2a2a;
-  transform: scale(1.03);
+  transform: scale(1.03); /* Efeito de zoom */
   cursor: pointer;
 }
 
@@ -95,6 +118,21 @@ header {
   border-radius: 8px;
 }
 
+.produto a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.produto a:hover {
+  color: #e53935;
+  text-decoration: underline;
+}
+
+/* ========================== */
+/* RODAPÉ                     */
+/* ========================== */
+
 footer {
   text-align: center;
   padding: 1em;
@@ -103,12 +141,41 @@ footer {
   margin-top: 40px;
 }
 
+/* ========================== */
+/* RESPONSIVIDADE (Mobile)    */
+/* ========================== */
+
 @media (max-width: 768px) {
   .produtos {
     flex-direction: column;
     align-items: center;
   }
+
+  .produto {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .container {
+    padding: 10px;
+  }
 }
+
+/* ========================== */
+/* TÍTULOS                    */
+/* ========================== */
 
 h2, h3, h4 {
   text-align: center;
@@ -118,11 +185,15 @@ h2, h3, h4 {
 
 h2 {
   font-size: 2em;
-  border-bottom: 2px solid #444;
+  border-bottom: 2px solid #7e0200;
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 20px;
 }
+
+/* ========================== */
+/* FORMULÁRIO DE CONTATO      */
+/* ========================== */
 
 form {
   max-width: 400px;
@@ -145,7 +216,7 @@ form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #444;
+  border: 1px solid #7e0200;
   border-radius: 5px;
   background-color: #111;
   color: #fff;
@@ -153,7 +224,7 @@ form textarea {
 }
 
 form button {
-  background-color: #444;
+  background-color: #7e0200;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -167,11 +238,26 @@ form button:hover {
   background-color: #b71c1c;
 }
 
+/* ========================== */
+/* CONTAINERS GERAIS          */
+/* ========================== */
+
 .container {
-  max-width: 900px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
+
+/* Alternativa com max-width menor */
+.container {
+  max-width: 600px;
+}
+
+/* ========================== */
+/* DETALHES DO PRODUTO        */
+/* ========================== */
 
 .produto-detalhe {
   display: flex;
@@ -194,7 +280,7 @@ form button:hover {
 .produto-detalhe button {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #444;
+  background-color: #7e0200;
   color: white;
   border: none;
   border-radius: 5px;
@@ -206,11 +292,15 @@ form button:hover {
   background-color: #b71c1c;
 }
 
+/* ========================== */
+/* BOTÃO FINALIZAR COMPRA     */
+/* ========================== */
+
 .btn-finalizar {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #444;
+  background-color: #7e0200;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -221,12 +311,16 @@ form button:hover {
   background-color: #b71c1c;
 }
 
+/* ========================== */
+/* ITENS DO CARRINHO          */
+/* ========================== */
+
 .carrinho-item {
   display: flex;
   align-items: center;
   gap: 15px;
   padding: 10px 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #7e0200;
 }
 
 .carrinho-item img {
@@ -234,12 +328,15 @@ form button:hover {
   border-radius: 8px;
 }
 
-/* Botão de esvaziar carrinho */
+/* ========================== */
+/* BOTÃO DE ESVAZIAR CARRINHO */
+/* ========================== */
+
 #esvaziar-carrinho {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 25px;
-  background-color: #444;
+  background-color: #7e0200;
   color: white;
   border: none;
   border-radius: 6px;
@@ -249,46 +346,54 @@ form button:hover {
 }
 
 #esvaziar-carrinho:hover {
-  background-color: #444;
+  background-color: #7e0200; /* Mantém mesma cor ao hover */
 }
 
-.produto a {
-  color: #fff;
-  text-decoration: none;
+/* ========================== */
+/* CONFIGURAÇÕES DE IMAGENS   */
+/* ========================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================== */
+/* MENSAGEM DE SUCESSO        */
+/* ========================== */
+
+.mensagem-sucesso {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #7e0200;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   font-weight: bold;
+  z-index: 9999;
+  animation: fadeInOut 3s ease forwards;
 }
 
-.produto a:hover {
-  color: #e53935;
-  text-decoration: underline;
+/* Animação de entrada e saída da mensagem */
+@keyframes fadeInOut {
+  0% { opacity: 0; bottom: 0; }
+  10% { opacity: 1; bottom: 20px; }
+  90% { opacity: 1; bottom: 20px; }
+  100% { opacity: 0; bottom: 0; }
 }
 
-.produtos {
-  overflow: visible;
+/* ========================== */
+/* MENSAGEM DE ERRO (EMAIL)   */
+/* ========================== */
+
+.erro-email {
+  color: #ffc107;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: block;
 }
-
-.produto {
-  overflow: hidden;
-  transition: all 0.3s ease;
-  will-change: transform;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2em;
-  color: #fff;
-  border-bottom: 2px solid #7e0200;
-  display: inline-block;
-  margin: 20px auto;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
-
-
-

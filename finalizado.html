@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Define o conjunto de caracteres -->
   <meta charset="UTF-8">
+
+  <!-- Título da aba do navegador -->
   <title>Compra Finalizada</title>
+
+  <!-- Importa o arquivo CSS principal do site -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Script para limpar o carrinho ao carregar a página -->
   <script>
-    // limpa o carrinho ao entrar na página
+    // Quando a página é carregada, o carrinho salvo no localStorage é removido
     window.onload = () => {
       localStorage.removeItem('carrinho');
     };
   </script>
 </head>
 <body>
+  <!-- Conteúdo principal da página com centralização e espaçamento -->
   <main class="container" style="text-align: center; padding: 50px;">
+    
+    <!-- Mensagem de sucesso da compra -->
     <h2>Compra Finalizada com Sucesso!</h2>
+
+    <!-- Agradecimento -->
     <p>Obrigado por comprar na Celulares Tech.</p>
+
+    <!-- Botão para retornar à página inicial -->
     <a href="index.html" class="btn-finalizar">Voltar para a loja</a>
   </main>
 </body>

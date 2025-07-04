@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Metadados da página -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da página -->
   <title>Contato - Murylo Cell</title>
+
+  <!-- Estilo da página -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Script JavaScript para validação e interações -->
   <script defer src="js/script.js"></script>
 </head>
 <body>
+  <!-- Cabeçalho com título e menu de navegação -->
   <header>
     <h1>Murylo Cell</h1>
     <nav>
@@ -21,28 +29,39 @@
     </nav>
   </header>
 
+  <!-- Conteúdo principal da página -->
   <main>
+    <!-- Seção de contato com título -->
     <section class="contato">
-  <div class="container">
-    <h2>Fale Conosco</h2>
-    <!-- Formulário vem aqui -->
-  </div>
-</section>
+      <div class="container">
+        <h2>Fale Conosco</h2>
+        <!-- Formulário de contato -->
+      </div>
+    </section>
 
+    <!-- Formulário de contato -->
     <form>
+      <!-- Campo para nome -->
       <label for="nome">Nome:</label><br>
       <input type="text" id="nome" name="nome"><br>
 
+      <!-- Campo para e-mail -->
       <label for="email">E-mail:</label><br>
       <input type="email" id="email" name="email"><br>
 
+      <!-- Mensagem de erro caso e-mail seja inválido -->
+      <span id="erro-email" class="erro-email"></span>
+
+      <!-- Campo para mensagem -->
       <label for="mensagem">Mensagem:</label><br>
       <textarea id="mensagem" name="mensagem"></textarea><br>
 
+      <!-- Botão para enviar o formulário -->
       <button type="submit">Enviar</button>
     </form>
   </main>
 
+  <!-- Rodapé da página -->
   <footer>
     <p>&copy; 2025 Murylo Cell</p>
   </footer>
